@@ -11,6 +11,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import HomeComponent from './components/HomeComponent.vue';
+// TODO: Pallette - #557C99, #9DB5C9, #3389CC, #375062
 
 const menuItems = ref([
     {
@@ -34,8 +35,6 @@ const menuItems = ref([
         href: '#',
     },
 ]);
-
-// TODO: Pallette - #557C99, #9DB5C9, #3389CC, #375062
 </script>
 
 <style lang="css">

@@ -11,7 +11,11 @@
 </template>
 
 <script setup lang="ts">
-// TODO: Pallette - #557C99, #9DB5C9, #3389CC, #375062
+// Color Palette:
+// #1d264b Blue
+// #f72707 Red
+// #ff7405 Orange
+// #f0a855 Gold, #545353 Gray
 import { RouterView } from 'vue-router';
 </script>
 

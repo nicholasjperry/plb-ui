@@ -1,8 +1,8 @@
 <template lang="pug">
     VContainer.v-container
-        VRow
-            VCol
-                h1 Premier League: Brawl!
+        VRow(style="align-items: center; justify-content: center")
+            h1.me-4 Premier League: Brawl
+            img(src="../assets/logo.webp" height="80" width="80")
         VRow
             VCol(cols="6")
                 VCard.v-card(
@@ -23,7 +23,7 @@
 
 <style lang="css">
 .v-card {
-    border: 2px solid #1d264b;
+    border: 4px outset #f0a855;
     box-shadow: 0px 5px 5px black;
     margin-top: 8px;
 }

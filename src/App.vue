@@ -1,6 +1,8 @@
 <template lang="pug">
     VApp(id="app")
         VAppBar.v-app-bar(:elevation="3")
+            RouterLink(to="/" active-class="home-router-link-active")
+                img(src="./assets/logo.webp" height="50" width="50")
             VSpacer
             RouterLink.route(to="/" active-class="home-router-link-active") Home
             RouterLink.route(to="/players") Players
@@ -15,7 +17,8 @@
 // #1d264b Blue
 // #f72707 Red
 // #ff7405 Orange
-// #f0a855 Gold, #545353 Gray
+// #f0a855 Gold
+// #545353 Gray
 import { RouterView } from 'vue-router';
 </script>
 

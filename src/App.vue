@@ -14,11 +14,12 @@
 
 <script setup lang="ts">
 // Color Palette:
-// #1d264b Blue
-// #f72707 Red
-// #ff7405 Orange
-// #f0a855 Gold
-// #545353 Gray
+// #1d264b Blue - main bg/accent
+// #f72707 Red - use for highlights, buttons, emphasis
+// #ff7405 Orange - secondary accent or call-to-action like sign up
+// #f0a855 Gold - borders, dividers, special messages
+// #545353 Gray - neutral bg color
+// #fff White - white text will most likely be the winner
 import { RouterView } from 'vue-router';
 </script>
 

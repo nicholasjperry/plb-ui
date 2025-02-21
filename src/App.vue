@@ -2,60 +2,58 @@
     VApp(id="app")
         VAppBar.v-app-bar(:elevation="3")
             VSpacer
-            .d-flex.flex-row
-                a.nav-item(v-for="item in menuItems" :key="item.name")
-                    span {{ item.name }}
-        HomeComponent
+            RouterLink.route(to="/" active-class="home-router-link-active") Home
+            RouterLink.route(to="/players") Players
+            RouterLink.route(to="/results") Results
+            RouterLink.route(to="/rules") Rules
+            RouterLink.route(to="/blog") Blog
+        RouterView
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import HomeComponent from './components/HomeComponent.vue';
 // TODO: Pallette - #557C99, #9DB5C9, #3389CC, #375062
-
-const menuItems = ref([
-    {
-        name: 'Home',
-        href: '/',
-    },
-    {
-        name: 'Players',
-        href: '#',
-    },
-    {
-        name: 'Results',
-        href: '#',
-    },
-    {
-        name: 'Rules',
-        href: '#',
-    },
-    {
-        name: 'Blog',
-        href: '#',
-    },
-]);
+import { RouterView } from 'vue-router';
 </script>
 
 <style lang="css">
 #app {
     background-color: #242424;
-    margin: 0 auto;
-    padding: 2rem;
+    padding-top: 2rem;
 }
 
 .v-app-bar {
-    background-image: linear-gradient(to right, #9DB5C9, #557C99) !important;
+    background-image: linear-gradient(to right, #545353, #1d264b) !important;
 }
 
-.nav-item {
+.route {
     color: #fff;
     cursor: pointer;
     font-family: Inter, system-ui;
     font-weight: 500;
     margin-inline-end: 20px;
-    :hover {
-        color: #000;
+    text-decoration: none;
+    &:hover {
+        opacity: 85%;
     }
+}
+
+.router-link-active {
+    color: #f72707;
+    text-decoration: underline;
+}
+
+.home-router-link-active {
+    color: #fff;
+    text-decoration: none;
+}
+
+.v-container {
+    max-width: 100%;
+}
+
+h1 {
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
 }
 </style>

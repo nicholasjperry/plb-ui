@@ -2,7 +2,7 @@
     VContainer.v-container
         VRow
             VCol
-                h1 Blog
+                h1.component-header Blog
 </template>
 
 <script setup lang="ts">

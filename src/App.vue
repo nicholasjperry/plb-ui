@@ -59,7 +59,7 @@ import { RouterView } from 'vue-router';
     max-width: 100%;
 }
 
-h1 {
+.component-header {
     color: #fff;
     font-size: 3rem;
     text-align: center;
@@ -71,6 +71,14 @@ h1 {
 }
 
 .v-card-text {
+    color: #fff;
+}
+
+h1 {
+    color: #fff;
+}
+
+p {
     color: #fff;
 }
 </style>

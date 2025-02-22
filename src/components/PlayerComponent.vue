@@ -2,7 +2,7 @@
     VContainer.v-container
         VRow
             VCol
-                h1 Players
+                h1.component-header Players
 </template>
 
 <script setup lang="ts">

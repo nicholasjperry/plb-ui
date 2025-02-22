@@ -2,7 +2,7 @@
     VContainer.v-container
         VRow
             VCol
-                h1 Results
+                h1.component-header Results
 </template>
 
 <script setup lang="ts">

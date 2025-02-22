@@ -1,7 +1,7 @@
 import { createMemoryHistory, createRouter } from "vue-router";
 import BlogComponent from "../components/BlogComponent.vue";
 import HomeComponent from "../components/HomeComponent.vue";
-import PlayerComponent from "../components/PlayerComponent.vue";
+import PlayersComponent from "../components/PlayersComponent.vue";
 import ResultsComponent from "../components/ResultsComponent.vue";
 import RulesComponent from '../components/RulesComponent.vue'
 
@@ -12,7 +12,7 @@ const routes = [
     },
     {
         path: '/players',
-        component: PlayerComponent,
+        component: PlayersComponent,
     },
     {
         path: '/results',

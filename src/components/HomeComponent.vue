@@ -23,9 +23,4 @@
 </script>
 
 <style lang="css">
-.v-card {
-    border: 3px outset #f0a855;
-    box-shadow: 0px 5px 5px black;
-    margin-top: 8px;
-}
 </style>

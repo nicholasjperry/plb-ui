@@ -29,6 +29,10 @@ const players = ref([
         avatar: '/src/assets/Hubriz.png',
     },
     {
+        name: 'Keerplunk',
+        avatar: '/src/assets/Keerplunk.png',
+    },
+    {
         name: 'Maxis',
         avatar: '/src/assets/Maxis.png',
     },

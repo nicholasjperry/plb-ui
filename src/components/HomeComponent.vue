@@ -16,10 +16,48 @@
             VCol(cols="6")
                 VCard.v-card(color="#545353")
                     VCardTitle.v-card-title Sign-Up
-                    VCardText.v-card-text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus corporis, quae possimus animi fuga error vel, inventore numquam libero tenetur enim aspernatur architecto accusantium suscipit quis dolorum autem ipsam, quidem recusandae officia! Ipsam molestias sint ad eaque eligendi sit, fugiat commodi quam officia vero ipsa optio error accusamus odit eum voluptate quaerat modi tempore ipsum? At neque ut natus nobis labore iure. Voluptates, voluptatibus sint. Mollitia veniam eius odio molestiae voluptatum nam ut dolorem nisi quisquam praesentium, aliquid ipsa sunt atque quaerat ipsam nesciunt? Deserunt tempora natus obcaecati dolore optio exercitationem iste facere, quia dolorum porro! Quidem quod corrupti delectus.
+                    VTabs(
+                        v-model="tab"
+                        bg-color="#1d264b"
+                    )
+                        VTab(value="today") {{ getToday() }}
+                        VTab(value="tomorrow") {{ getTomorrow() }}
+                        VTab(value="dayAfterTomorrow") {{ getDayAfterTomorrow() }}
+                    VCardText.v-card-text
+                        VTabsWindow(v-model="tab")
+                            VTabsWindowItem(value="today")
+                                h2 Times:
+                        VTabsWindow(v-model="tab")
+                            VTabsWindowItem(value="tomorrow") 
+                                h2 Times:
+                        VTabsWindow(v-model="tab")
+                            VTabsWindowItem(value="dayAfterTomorrow") 
+                                h2 Times:
+
 </template>
 
 <script setup lang="ts">
+import{ DateTime } from 'luxon';
+import { ref } from 'vue';
+import { VTabsWindow, VTabsWindowItem } from 'vuetify/lib/components/index.mjs';
+function getToday() {
+    const today = DateTime.now();
+    return today.toFormat('MM/dd/yyyy')
+}
+
+function getTomorrow() {
+    const today = DateTime.now();
+    const tomorrow = today.plus({ days: 1 }).toFormat('MM/dd/yyyy');
+    return tomorrow;
+}
+
+function getDayAfterTomorrow() {
+    const today = DateTime.now();
+    const tomorrow = today.plus({ days: 2 }).toFormat('MM/dd/yyyy');
+    return tomorrow;
+}
+
+const tab = ref(null);
 </script>
 
 <style lang="css">

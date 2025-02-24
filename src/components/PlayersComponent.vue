@@ -3,7 +3,7 @@
         VRow
             VCol
                 h1.component-header Players
-        VRow.justify-space-between
+        VRow
             VCol(cols="3" v-for="player in players" :key="player.name")
                 VCard.pa-3.v-card(color="#545353")
                     .d-flex.flex-column.align-center
@@ -47,6 +47,14 @@ const players = ref([
     {
         name: 'Phyllis',
         avatar: '/src/assets/Phyllis.png',
+    },
+    {
+        name: 'Raga',
+        avatar: '/src/assets/Raga.png',
+    },
+    {
+        name: 'Samphree',
+        avatar: '/src/assets/Samphree.png',
     },
     {
         name: 'Verified',

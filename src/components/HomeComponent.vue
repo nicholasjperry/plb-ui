@@ -33,14 +33,11 @@
                         v-model="tab"
                         bg-color="#1d264b"
                     )
-                        VTab(value="today") Today
-                        VTab(value="tomorrow") Tomorrow
-                        VTab(value="dayAfterTomorrow") Next Day
+                        VTab(v-for="day in days" :key="day.value") {{ day.value }}
                     VCardText.v-card-text
                         VTabsWindow(v-model="tab")
-                            VTabsWindowItem(value="today")
+                            VTabsWindowItem(v-for="day in days" :key="day.value")
                                 .d-flex.flex-column
-                                    h2.mb-2 {{ getToday() }}
                                     .d.flex.flex-row
                                         VBtn.me-2(
                                             v-for="availableTime in availableTimes"
@@ -49,52 +46,18 @@
                                             :key="availableTime.hour"
                                             @click="disableTime(availableTime.hour)"
                                         ) {{ availableTime.hour }}
-                        VTabsWindow(v-model="tab")
-                            VTabsWindowItem(value="tomorrow")
-                                .d-flex.flex-column
-                                    h2.mb-2 {{ getTomorrow() }}
-                                    .d.flex.flex-row
-                                        //- VBtn.me-2(
-                                        //-     v-for="availableTime in availableTimes"
-                                        //-     color="#f72707"
-                                        //-     :disabled="availableTime.disabled"
-                                        //-     :key="availableTime.hour"
-                                        //-     @click="disableTime(availableTime.hour)"
-                                        //- ) {{ availableTime.hour }}
-                        VTabsWindow(v-model="tab")
-                            VTabsWindowItem(value="dayAfterTomorrow") 
-                                .d-flex.flex-column
-                                    h2.mb-2 {{ getDayAfterTomorrow() }}
-                                    .d.flex.flex-row
-                                        //- VBtn.me-2(
-                                        //-     v-for="availableTime in availableTimes"
-                                        //-     color="#f72707"
-                                        //-     :disabled="availableTime.disabled"
-                                        //-     :key="availableTime.hour"
-                                        //-     @click="disableTime(availableTime.hour)"
-                                        //- ) {{ availableTime.hour }}
 </template>
 
 <script setup lang="ts">
 import{ DateTime } from 'luxon';
 import { ref } from 'vue';
 import { VTabsWindow, VTabsWindowItem } from 'vuetify/lib/components/index.mjs';
+// Probably not necessary (?)
 function getToday() {
     const today = DateTime.now();
     return today.toFormat('EEE MM/dd/yyyy')
 }
 
-function getTomorrow() {
-    const today = DateTime.now();
-    const tomorrow = today.plus({ days: 1 }).toFormat('EEE MM/dd/yyyy');
-    return tomorrow;
-}
-
-function getDayAfterTomorrow() {
-    const today = DateTime.now();
-    const tomorrow = today.plus({ days: 2 }).toFormat('EEE MM/dd/yyyy');
-    return tomorrow;
-}
 const tab = ref(null);
 
 const availableTimes = ref([
@@ -104,13 +67,52 @@ const availableTimes = ref([
         disabled: false,
     },
     {
+        hour: '9:30 PM',
+        disabled: false,
+    },
+    {
         hour: '10:00 PM',
+        disabled: false,
+    },
+    {
+        hour: '10:30 PM',
         disabled: false,
     },
     {
         hour: '11:00 PM',
         disabled: false,
-    }
+    },
+]);
+
+const days = ref([
+    {
+        value: 'Sunday',
+        availableTimes: [...availableTimes.value],
+    },
+    {
+        value: 'Monday',
+        availableTimes: [...availableTimes.value],
+    },
+    {
+        value: 'Tuesday',
+        availableTimes: [...availableTimes.value],
+    },
+    {
+        value: 'Wednesday',
+        availableTimes: [...availableTimes.value],
+    },
+    {
+        value: 'Thursday',
+        availableTimes: [...availableTimes.value],
+    },
+    {
+        value: 'Friday',
+        availableTimes: [...availableTimes.value]
+    },
+    {
+        value: 'Saturday',
+        availableTimes: [...availableTimes.value],
+    },
 ]);
 
 function disableTime(availableTime: string) {

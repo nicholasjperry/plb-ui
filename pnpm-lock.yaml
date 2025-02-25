@@ -21,6 +21,9 @@ importers:
         specifier: '4'
         version: 4.5.0(vue@3.5.13(typescript@5.7.3))
     devDependencies:
+      '@mdi/font':
+        specifier: ^7.4.47
+        version: 7.4.47
       '@types/luxon':
         specifier: ^3.4.2
         version: 3.4.2
@@ -377,6 +380,9 @@ packages:
 
   '@leichtgewicht/ip-codec@2.0.5':
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
+
+  '@mdi/font@7.4.47':
+    resolution: {integrity: sha512-43MtGpd585SNzHZPcYowu/84Vz2a2g31TvPMTm9uTiCSWzaheQySUcSyUH/46fPnuPQWof2yd0pGBtzee/IQWw==}
 
   '@node-ipc/js-queue@2.0.3':
     resolution: {integrity: sha512-fL1wpr8hhD5gT2dA1qifeVaoDFlQR5es8tFuKqjHX+kdOtdNHnxkVZbtIrR2rxnMFvehkjaZRNV2H/gPXlb0hw==}
@@ -4045,6 +4051,8 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.0
 
   '@leichtgewicht/ip-codec@2.0.5': {}
+
+  '@mdi/font@7.4.47': {}
 
   '@node-ipc/js-queue@2.0.3':
     dependencies:

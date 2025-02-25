@@ -43,8 +43,10 @@
                 VCard.v-card(color="#545353")
                     VCardTitle.v-card-title Recent Match Highlights
                     VCarousel(
+                        cycle
                         height="350"
                         hide-delimiter-background
+                        show-arrows="hover"
                     )
                         VCarouselItem.v-carousel-item(src="/images/RagavHubriz.png" eager)
                         VCarouselItem.v-carousel-item(src="/images/2framesvsamphree.png" eager)

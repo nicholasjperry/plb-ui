@@ -18,47 +18,47 @@ import { ref } from 'vue';
 const players = ref([
     {
         name: '2Frames',
-        avatar: '/src/assets/2Frames.png',
+        avatar: '/images/2Frames.png',
     },
     {
         name: 'Giblits',
-        avatar: '/src/assets/Giblits.png',
+        avatar: '/images/Giblits.png',
     },
     {
         name: 'Hubriz',
-        avatar: '/src/assets/Hubriz.png',
+        avatar: '/images/Hubriz.png',
     },
     {
         name: 'Keerplunk',
-        avatar: '/src/assets/Keerplunk.png',
+        avatar: '/images/Keerplunk.png',
     },
     {
         name: 'Maxis',
-        avatar: '/src/assets/Maxis.png',
+        avatar: '/images/Maxis.png',
     },
     {
         name: 'Meadmaker',
-        avatar: '/src/assets/Meadmaker.png',
+        avatar: '/images/Meadmaker.png',
     },
     {
         name: 'Notorious',
-        avatar: '/src/assets/Notorious.png',
+        avatar: '/images/Notorious.png',
     },
     {
         name: 'Phyllis',
-        avatar: '/src/assets/Phyllis.png',
+        avatar: '/images/Phyllis.png',
     },
     {
         name: 'Raga',
-        avatar: '/src/assets/Raga.png',
+        avatar: '/images/Raga.png',
     },
     {
         name: 'Samphree',
-        avatar: '/src/assets/Samphree.png',
+        avatar: '/images/Samphree.png',
     },
     {
         name: 'Verified',
-        avatar: '/src/assets/Verified.png',
+        avatar: '/images/Verified.png',
     },
 ]);
 </script>

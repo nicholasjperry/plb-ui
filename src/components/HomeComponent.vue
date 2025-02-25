@@ -2,30 +2,53 @@
     VContainer.v-container
         VRow(style="align-items: center; justify-content: center")
             h1.ms-8.me-4.component-header Premier League: Brawl
-            img(src="../assets/logo.webp" height="80" width="80")
+            img(src="/images/logo.webp" height="80" width="80")
         VRow
             VCol
                 VCard.v-card(color="#d24700")
-                    VCardTitle.v-card-title League Description 
-                    VCardText.v-card-text 
-                        | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt ad beatae doloremque.
-                        | Provident quas modi nesciunt est dignissimos fugiat explicabo ad inventore qui, neque amet
-                        | eligendi praesentium officia possimus reiciendis incidunt odio ea quia rem. Maxime, nemo magnam.
-                        | Ipsum, libero suscipit explicabo et tempora totam, ducimus dolores sit dolore vero provident enim
-                        | necessitatibus ipsa eveniet repellendus porro cum, iure culpa consectetur eligendi fugit quas incidunt
-                        | rem! Iste laudantium error possimus eum magni assumenda mollitia vitae corporis sequi nam explicabo impedit
-                        | dolor maiores, dolorem nobis dolores quisquam, officiis a quo cumque unde eius voluptas. Doloribus consequatur a, quisquam non odit animi!
+                    VCardTitle.v-card-title(style="font-size: 1.5rem; text-decoration: underline") About the League 
+                    VCardText.v-card-text
+                        | Welcome to the 
+                        strong Premier League: Brawl, 
+                        | a competitive yet fun-driven 
+                        strong 1v1 Commander League
+                        | played on MTG Arena! Our league is built for having, “more fun with the fun we have.”
+                        br
+                        br
+                        | Each match is played in a Best-of-3 Format, with detailed post-game breakdowns ensuring 
+                        | every match tells a story beyond just wins and losses. Whether you're a seasoned veteran
+                        | or a rising competitor, our league offers a place to showcase your skills, track meaningful
+                        | performance metrics, and enjoy the thrill of battle.
+                        br
+                        br
+                        | Our mission is simple: 
+                        strong Foster a competitive, sports-like atmosphere while keeping the game fun and engaging for everyone.
+                        br
+                        br
+                        h3 What to Expect 
+                        li
+                            strong Structured Best-of-3 Matches - 
+                            | Head-to-head battles in a refined competitive format based on the Beta Ruleset for the Commander Brackets.
+                        li
+                            strong Pageantry - 
+                            | Team logos/profiles, standings, tournaments, titles, and more are included to make this truly a unique experience.
+                        li
+                            strong Post-Game Recaps - 
+                            | Sports style breakdowns of key plays and performance highlights.
+                        li
+                            strong Community and Growth - 
+                            | A dedicated Discord server and website for match coordination, deck discussions, and strategy talk.
         VRow
             VCol(cols="6")
                 VCard.v-card(color="#545353")
                     VCardTitle.v-card-title Recent Match Highlights
-                    VCardText.v-card-text 
-                        | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus corporis, quae possimus animi fuga error vel,
-                        | inventore numquam libero tenetur enim aspernatur architecto accusantium suscipit quis dolorum autem ipsam, quidem
-                        | recusandae officia! Ipsam molestias sint ad eaque eligendi sit, fugiat commodi quam officia vero ipsa optio error 
-                        | accusamus odit eum voluptate quaerat modi tempore ipsum? At neque ut natus nobis labore iure. Voluptates, voluptatibus
-                        | sint. Mollitia veniam eius odio molestiae voluptatum nam ut dolorem nisi quisquam praesentium, aliquid ipsa sunt atque
-                        | quaerat ipsam nesciunt? Deserunt tempora natus obcaecati dolore optio exercitationem iste facere, quia dolorum porro! Quidem quod corrupti delectus.
+                    VCarousel(
+                        height="350"
+                        hide-delimiter-background
+                    )
+                        VCarouselItem.v-carousel-item(src="/images/RagavHubriz.png" eager)
+                        VCarouselItem.v-carousel-item(src="/images/2framesvsamphree.png" eager)
+                        VCarouselItem.v-carousel-item(src="/images/GiblitsvMeadmaker.png" eager)
             VCol(cols="6")
                 VCard.v-card(color="#545353")
                     VCardTitle.v-card-title Sign-Up
@@ -51,7 +74,7 @@
 <script setup lang="ts">
 import{ DateTime } from 'luxon';
 import { ref } from 'vue';
-import { VTabsWindow, VTabsWindowItem } from 'vuetify/lib/components/index.mjs';
+import { VCarousel, VTabsWindow, VTabsWindowItem } from 'vuetify/lib/components/index.mjs';
 // Probably not necessary (?)
 function getToday() {
     const today = DateTime.now();
@@ -76,10 +99,6 @@ const availableTimes = ref([
     },
     {
         hour: '10:30 PM',
-        disabled: false,
-    },
-    {
-        hour: '11:00 PM',
         disabled: false,
     },
 ]);

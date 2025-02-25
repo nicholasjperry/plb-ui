@@ -2,7 +2,7 @@
     VApp(id="app")
         VAppBar.v-app-bar(:elevation="3")
             RouterLink(to="/" active-class="home-router-link-active")
-                img(src="./assets/logo.webp" height="50" width="50")
+                img(src="/images/logo.webp" height="50" width="50")
             VSpacer
             RouterLink.route(to="/" active-class="home-router-link-active") Home
             RouterLink.route(to="/players") Players

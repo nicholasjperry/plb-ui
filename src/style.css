@@ -82,6 +82,10 @@
     p {
         color: #fff;
     }
+
+    li {
+        text-indent: 20px;
+    }
 }
 
 /* 

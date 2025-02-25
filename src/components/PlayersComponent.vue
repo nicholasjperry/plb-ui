@@ -1,14 +1,14 @@
 <template lang="pug">
-    VContainer.v-container
-        VRow
-            VCol
-                h1.component-header Players
-        VRow
-            VCol(cols="3" v-for="player in players" :key="player.name")
-                VCard.pa-3.v-card(color="#545353")
-                    .d-flex.flex-column.align-center
-                        VCardTitle.v-card-title {{ player.name }}
-                        img(:src="player.avatar" height="200" width="200")
+VContainer.v-container
+    VRow
+        VCol
+            h1.component-header Players
+    VRow
+        VCol(cols="3" v-for="player in players" :key="player.name")
+            VCard.pa-3.v-card(color="#545353")
+                .d-flex.flex-column.align-center
+                    VCardTitle.v-card-title {{ player.name }}
+                    img(:src="player.avatar" height="200" width="200")
 </template>
 
 <script setup lang="ts">

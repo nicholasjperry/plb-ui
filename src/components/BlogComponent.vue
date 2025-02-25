@@ -1,8 +1,8 @@
 <template lang="pug">
-    VContainer.v-container
-        VRow
-            VCol
-                h1.component-header Blog
+VContainer.v-container
+    VRow
+        VCol
+            h1.component-header Blog
 </template>
 
 <script setup lang="ts">

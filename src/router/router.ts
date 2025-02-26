@@ -2,7 +2,7 @@ import { createMemoryHistory, createRouter } from "vue-router";
 import BlogComponent from "../components/BlogComponent.vue";
 import HomeComponent from "../components/HomeComponent.vue";
 import PlayersComponent from "../components/PlayersComponent.vue";
-import ResultsComponent from "../components/ResultsComponent.vue";
+import StandingsComponent from "../components/StandingsComponent.vue";
 import RulesComponent from '../components/RulesComponent.vue'
 
 const routes = [
@@ -15,8 +15,8 @@ const routes = [
         component: PlayersComponent,
     },
     {
-        path: '/results',
-        component: ResultsComponent,
+        path: '/standings',
+        component: StandingsComponent,
     },
     {
         path: '/rules',

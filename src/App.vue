@@ -6,7 +6,7 @@
             VSpacer
             RouterLink.route(to="/" active-class="home-router-link-active") Home
             RouterLink.route(to="/players") Players
-            RouterLink.route(to="/results") Results
+            RouterLink.route(to="/standings") Standings
             RouterLink.route(to="/rules") Rules
             RouterLink.route(to="/blog") Blog
         RouterView

@@ -55,25 +55,29 @@ VContainer.v-container
                         @click="toggleImageDialog(image.src)"
                     )
         VCol(cols="6")
+            //- TODO: Old sign-up component
+            //- VCard.v-card(color="#545353")
+            //-     VCardTitle.v-card-title Sign-Up
+            //-     VTabs.mx-4(
+            //-         v-model="tab"
+            //-         bg-color="#1d264b"
+            //-     )
+            //-         VTab(v-for="day in days" :key="day.value") {{ day.value }}
+            //-     VCardText.v-card-text
+            //-         VTabsWindow(v-model="tab")
+            //-             VTabsWindowItem(v-for="day in days" :key="day.value")
+            //-                 .d-flex.flex-column
+            //-                     .d.flex.flex-row
+            //-                         VBtn.me-2(
+            //-                             v-for="availableTime in availableTimes"
+            //-                             color="#f72707"
+            //-                             :disabled="availableTime.disabled"
+            //-                             :key="availableTime.hour"
+            //-                             @click="disableTime(availableTime.hour)"
+            //-                         ) {{ availableTime.hour }}
             VCard.v-card(color="#545353")
-                VCardTitle.v-card-title Sign-Up
-                VTabs.mx-4(
-                    v-model="tab"
-                    bg-color="#1d264b"
-                )
-                    VTab(v-for="day in days" :key="day.value") {{ day.value }}
-                VCardText.v-card-text
-                    VTabsWindow(v-model="tab")
-                        VTabsWindowItem(v-for="day in days" :key="day.value")
-                            .d-flex.flex-column
-                                .d.flex.flex-row
-                                    VBtn.me-2(
-                                        v-for="availableTime in availableTimes"
-                                        color="#f72707"
-                                        :disabled="availableTime.disabled"
-                                        :key="availableTime.hour"
-                                        @click="disableTime(availableTime.hour)"
-                                    ) {{ availableTime.hour }}
+                VCardTitle.mb-4.v-card-title Most Wanted List
+                VImg(src="/public//images/MostWanted1.png" height="335")
 VDialog(
     v-model="showImageDialog" 
     close-on-content-click
@@ -104,13 +108,13 @@ function toggleImageDialog(src: string) {
 
 const images = ref([
     {
-        src: '/images/RagavHubriz.png',
+        src: '/images/hubrizVsamphree.png',
     },
     {
-        src: '/images/2framesvsamphree.png',
+        src: '/images/giblitsVmaxis.png',
     },
     {
-        src: '/images/GiblitsvMeadmaker.png',
+        src: '/images/maxisVmeadmaker.png',
     },
 ]);
 

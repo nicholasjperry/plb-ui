@@ -7,7 +7,7 @@ VContainer.v-container
         VCol.d-flex.flex-row
             VImg(
                 height="55%"
-                src="/public/images/StandingsMasterDay2.webp"
+                src="/public/images/StandingsMasterday4.png"
                 width="55%"
             )
 </template>

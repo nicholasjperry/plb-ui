@@ -1,6 +1,6 @@
 <template lang="pug">
     VApp(id="app")
-        VAppBar.v-app-bar(:elevation="3")
+        VAppBar.v-app-bar
             RouterLink(to="/" active-class="home-router-link-active")
                 img(src="/images/logo.webp" height="50" width="50")
             VSpacer
@@ -9,10 +9,32 @@
             RouterLink.route(to="/standings") Standings
             RouterLink.route(to="/rules") Rules
             RouterLink.route(to="/blog") Blog
+            VBtn.me-2(
+                v-if="!validSession"
+                color="primary"
+                variant="flat"
+                @click="handleRegister"
+            ) Register
+            VBtn(
+                v-if="!validSession"
+                color="#545353"
+                variant="flat"
+                @click="handleLogin"
+            ) Login
         RouterView
 </template>
 
 <script setup lang="ts">
+const validSession = ref(false);
+
+function handleLogin() {
+    console.log('Login clicked');
+}
+
+function handleRegister() {
+    console.log('Register clicked');
+}
+import { ref } from 'vue';
 // Color Palette:
 // #1d264b Blue - main bg/accent
 // #f72707 Red - use for highlights, buttons, emphasis

@@ -55,6 +55,9 @@ VContainer.v-container
                         @click="toggleImageDialog(image.src)"
                     )
         VCol(cols="6")
+            VCard.v-card(color="#545353")
+                VCardTitle.mb-4.v-card-title Most Wanted List
+                VImg(src="/public//images/MostWanted1.png" height="335")
             //- TODO: Old sign-up component
             //- VCard.v-card(color="#545353")
             //-     VCardTitle.v-card-title Sign-Up
@@ -75,9 +78,6 @@ VContainer.v-container
             //-                             :key="availableTime.hour"
             //-                             @click="disableTime(availableTime.hour)"
             //-                         ) {{ availableTime.hour }}
-            VCard.v-card(color="#545353")
-                VCardTitle.mb-4.v-card-title Most Wanted List
-                VImg(src="/public//images/MostWanted1.png" height="335")
 VDialog(
     v-model="showImageDialog" 
     close-on-content-click
@@ -90,7 +90,11 @@ VDialog(
 <script setup lang="ts">
 // import{ DateTime } from 'luxon';
 import { ref } from 'vue';
-import { VCarousel, VTabsWindow, VTabsWindowItem } from 'vuetify/lib/components/index.mjs';
+import { 
+    VCarousel, 
+    // VTabsWindow, 
+    // VTabsWindowItem 
+} from 'vuetify/lib/components/index.mjs';
 
 // TODO: Save for later (?)
 // function getToday() {
@@ -118,68 +122,69 @@ const images = ref([
     },
 ]);
 
-const tab = ref(null);
+// TODO: Save for later (?)
+// const tab = ref(null);
 
-const availableTimes = ref([
-    // TODO: derive from db vs. just perform getToday, getTomorrow, etc. logic (?)
-    {
-        hour: '9:00 PM',
-        disabled: false,
-    },
-    {
-        hour: '9:30 PM',
-        disabled: false,
-    },
-    {
-        hour: '10:00 PM',
-        disabled: false,
-    },
-    {
-        hour: '10:30 PM',
-        disabled: false,
-    },
-]);
+// const availableTimes = ref([
+//     // TODO: derive from db vs. just perform getToday, getTomorrow, etc. logic (?)
+//     {
+//         hour: '9:00 PM',
+//         disabled: false,
+//     },
+//     {
+//         hour: '9:30 PM',
+//         disabled: false,
+//     },
+//     {
+//         hour: '10:00 PM',
+//         disabled: false,
+//     },
+//     {
+//         hour: '10:30 PM',
+//         disabled: false,
+//     },
+// ]);
 
-const days = ref([
-    {
-        value: 'Sunday',
-        availableTimes: [...availableTimes.value],
-    },
-    {
-        value: 'Monday',
-        availableTimes: [...availableTimes.value],
-    },
-    {
-        value: 'Tuesday',
-        availableTimes: [...availableTimes.value],
-    },
-    {
-        value: 'Wednesday',
-        availableTimes: [...availableTimes.value],
-    },
-    {
-        value: 'Thursday',
-        availableTimes: [...availableTimes.value],
-    },
-    {
-        value: 'Friday',
-        availableTimes: [...availableTimes.value]
-    },
-    {
-        value: 'Saturday',
-        availableTimes: [...availableTimes.value],
-    },
-]);
+// const days = ref([
+//     {
+//         value: 'Sunday',
+//         availableTimes: [...availableTimes.value],
+//     },
+//     {
+//         value: 'Monday',
+//         availableTimes: [...availableTimes.value],
+//     },
+//     {
+//         value: 'Tuesday',
+//         availableTimes: [...availableTimes.value],
+//     },
+//     {
+//         value: 'Wednesday',
+//         availableTimes: [...availableTimes.value],
+//     },
+//     {
+//         value: 'Thursday',
+//         availableTimes: [...availableTimes.value],
+//     },
+//     {
+//         value: 'Friday',
+//         availableTimes: [...availableTimes.value]
+//     },
+//     {
+//         value: 'Saturday',
+//         availableTimes: [...availableTimes.value],
+//     },
+// ]);
 
-function disableTime(availableTime: string) {
-    const timeFound = availableTimes.value.find((t) => t.hour === availableTime);
-    // TODO: Show dialog
-    // Confirm time
-    // Disable time
-    if (timeFound)
-        timeFound.disabled = true;
-}
+// function disableTime(availableTime: string) {
+//     const timeFound = availableTimes.value.find((t) => t.hour === availableTime);
+//     if (timeFound)
+//         timeFound.disabled = true;
+// }
 </script>
 
 <style lang="css">
+.v-card-text {
+    font-size: 1rem;
+}
 </style>

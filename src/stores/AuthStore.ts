@@ -1,24 +1,25 @@
 import { defineStore } from "pinia";
 import { UserDto } from "../dtos/UserDto";
-import { v4 as newGuid } from 'uuid';
+// import { v4 as newGuid } from 'uuid';
+import UserDao from "../daos/UserDao";
 
 export const useAuthStore = defineStore('auth', () => {
     const user = new UserDto();
-    // const dao = ;
+    const dao = UserDao;
 
-    function handleLogin() {
+    function loginUser() {
         console.log('Login clicked');
     }
 
-    async function handleRegister() {
+    async function registerUser() {
         console.log('Register clicked');
-        user.userUid = newGuid();
-        // const result = await dao.RegisterUser(user); 
+        const result = await dao.RegisterUser(user); 
+        return result;
     }
 
     return {
-        handleLogin,
-        handleRegister,
+        loginUser,
+        registerUser,
         user,
     }
 });

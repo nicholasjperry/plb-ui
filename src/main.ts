@@ -4,6 +4,9 @@ import App from './App.vue';
 import { router } from './router/router';
 import { createPinia } from 'pinia';
 import { vuetify } from './plugins/vuetify';
+import firebaseApp from './firebase';
+
+console.log('Firebase initialized', firebaseApp);
 
 const pinia = createPinia();
 

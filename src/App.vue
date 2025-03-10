@@ -104,13 +104,11 @@ VDialog.h-100(
 <script setup lang="ts">
 import { ref } from 'vue';
 import { RouterView } from 'vue-router';
-// import { useUserStore } from './stores/UserStore';
 import { useAuthStore } from './stores/AuthStore';
 import { UserDto } from './dtos/UserDto';
 
 // #region Stores
 
-// const userStore = useUserStore();
 const authStore = useAuthStore();
 
 // #endregion
@@ -126,11 +124,10 @@ const showRegisterPassword = ref(false);
 function toggleRegisterDialog() {
     showDialog.value = !showDialog.value;
     tab.value = 'register';
-    // user.value = {};
 }
 
 function handleRegister() {
-    authStore.handleRegister();
+    authStore.registerUser();
 }
 
 function toggleShowRegisterPassword() {
@@ -151,11 +148,10 @@ const showLoginPassword = ref(false);
 function toggleLoginDialog() {
     showDialog.value = !showDialog.value;
     tab.value = 'login';
-    // user.value = {};
 }
 
 function handleLogin() {
-    authStore.handleLogin();
+    authStore.loginUser();
 }
 
 function toggleShowLoginPassword() {
